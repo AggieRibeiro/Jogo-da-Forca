@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Forca - Comidas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>JOGO DA "FORCA"</h1>
+    <h3>Todas as palavras são referentes a comidas.</h3>
+    <p>
+        Digite uma palavra com quatro letras ou cinco letras que comece com <span id="inicial"><strong>LETRA</strong></span>:
+        <input id="palavra">
+    </p>
+    <h2 id="resposta">RESULTADO</h2>
+    <button class="botao" onclick="Teste()">Responder</button>
+    <script>
+        const cafemanha = ["Suco", "Bolo", "Café", "Pão", "Leite", "Arroz", "Fruta", "Torta", "Peixe", "Ovo"];
+        const palavrasecreta = cafemanha[Math.floor(Math.random() * cafemanha.length)];
+        const cafePergunta = [];
+        while (cafemanha.length) {
+            const index = palavrasecreta;
+            const [option] = cafemanha.splice(index, 1);
+            cafePergunta.push(option);
+        }
+        let inicial = document.getElementById('inicial');
+        if (palavrasecreta=="Suco"){
+            inicial= "S";
+        } else if (palavrasecreta == "Bolo"){
+            inicial= "B";
+        } else if (palavrasecreta == "Café"){
+            inicial= "C";
+        } else if (palavrasecreta == "Pão"){
+            inicial= "P";
+        } else if (palavrasecreta == "Leite"){
+            inicial= "L";
+        } else if (palavrasecreta == "Arroz"){
+            inicial= "A";
+        } else if (palavrasecreta == "Fruta"){
+            inicial= "F";
+        } else if (palavrasecreta == "Torta"){
+            inicial= "T";
+        } else if (palavrasecreta == "Peixe"){
+            inicial= "P";
+        } else if (palavrasecreta == "Ovo"){
+            inicial= "O";
+        }
+        document.getElementById('inicial').innerHTML = (inicial);
+        /*let fLen = cafemanha.length;
+
+        function sorteio(){
+            let text = "<ul>";
+            for (let i = 0; i < fLen; i++) {
+            text += tecnologias[i];
+            }
+        }*/
+
+        function Teste(){
+            let palavra = document.getElementById('palavra').value;
+            if (palavrasecreta == palavra){
+                document.getElementById('resposta').innerHTML = ("Verdadeiro");
+            /*} else if (palavrasecreta == "Bolo"){
+                document.getElementById('resposta').innerHTML = ("Verdadeiro");
+            } else if (palavrasecreta == "Café"){
+                document.getElementById('resposta').innerHTML = ("Verdadeiro");
+            } else if (palavrasecreta == "Pão"){
+                document.getElementById('resposta').innerHTML = ("Verdadeiro");
+            } else if (palavrasecreta == "Leite"){
+                document.getElementById('resposta').innerHTML = ("Verdadeiro");
+            } else if (palavrasecreta == "Arroz"){
+                document.getElementById('resposta').innerHTML = ("Verdadeiro");
+            } else if (palavrasecreta == "Fruta"){
+                document.getElementById('resposta').innerHTML = ("Verdadeiro");
+            } else if (palavrasecreta == "Torta"){
+                document.getElementById('resposta').innerHTML = ("Verdadeiro");
+            } else if (palavrasecreta == "Peixe"){
+                document.getElementById('resposta').innerHTML = ("Verdadeiro");
+            } else if (palavrasecreta == "Ovo"){
+                document.getElementById('resposta').innerHTML = ("Verdadeiro");*/
+            }else{
+                document.getElementById('resposta').innerHTML = ("Falso");
+            }
+        }
+    </script>
+</body>
+</html>
