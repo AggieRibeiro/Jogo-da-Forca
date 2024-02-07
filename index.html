@@ -17,7 +17,7 @@
     <h2 id="resposta">RESULTADO</h2>
     <button class="botao" onclick="Teste()">Responder</button>
     <script>
-        const cafemanha = ["Suco", "Bolo", "Café", "Pão", "Leite", "Arroz", "Fruta", "Torta", "Peixe", "Ovo"];
+        const cafemanha = ["Suco", "Bolo", "Café", "Pão", "Leite", "Arroz", "Fruta", "Torta", "Milho", "Ovo"];
         const palavrasecreta = cafemanha[Math.floor(Math.random() * cafemanha.length)];
         const cafePergunta = [];
         while (cafemanha.length) {
@@ -42,8 +42,8 @@
             inicial= "F";
         } else if (palavrasecreta == "Torta"){
             inicial= "T";
-        } else if (palavrasecreta == "Peixe"){
-            inicial= "P";
+        } else if (palavrasecreta == "Milho"){
+            inicial= "M";
         } else if (palavrasecreta == "Ovo"){
             inicial= "O";
         }
